@@ -354,11 +354,18 @@ function play(guild, song) {
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-en") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
 
-  message.channel.send("**لقد تم ارسال رسالة المساعدة في الخاص**")
 
-message.author.send(`
-
+ message.author.sendMessage(`
+ **
+_____________________________
 جميع اوامر البوت 
 
 1play لتشغيل المقطع الصوتي
@@ -379,10 +386,14 @@ message.author.send(`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 1np لمعرفة اسم المقطع الذي يعمل الآن
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+_________________________________
+
+**
+
+`);
 
     }
 });
-
 
 
 
